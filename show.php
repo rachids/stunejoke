@@ -4,6 +4,7 @@ require_once 'config/bdd.php';
 
 $id = $_GET['id'];
 
+// Requête avec une grossière faille d'injection sql
 $query = $pdo->query('SELECT * FROM jokes WHERE id = '. $id);
 $joke = $query->fetch(PDO::FETCH_ASSOC);
 
